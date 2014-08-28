@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jshint index.js lib/* test/* && mocha"
+    "test": "npm run jshint && npm run lintspaces && mocha",
+    "jshint": "jshint `find . -name \"*.js\" ! -path \"./node_modules/*\"`",
+    "lintspaces": "lintspaces -n -t -d \"spaces\" -s 2 `find . -name \"*.js\" ! -path \"./node_modules/*\"`"
   },
   "repository": {
     "type": "git",
@@ -21,6 +23,7 @@
   "homepage": "https://github.com/matthew-andrews/offline-todo-api",
   "devDependencies": {
     "jshint": "^2.5.3",
+    "lintspaces-cli": "0.0.4",
     "mocha": "^1.21.4",
     "supertest": "^0.13.0"
   },
