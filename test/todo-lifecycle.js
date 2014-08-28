@@ -21,42 +21,42 @@ describe('a todo lifecycle', function() {
   });
 
   it('GET /todos should return just created todo in an array', function(done) {
-     request(app)
-       .get('/todos')
-       .set('Accept', 'application/json')
-       .expect(200, [{ _id: String(now), text: 'Wash the dishes' }], done);
+    request(app)
+      .get('/todos')
+      .set('Accept', 'application/json')
+      .expect(200, [{ _id: String(now), text: 'Wash the dishes' }], done);
   });
 
   it('GET /todos/:id should return just that todo', function(done) {
-     request(app)
-       .get('/todos/'+String(now))
-       .set('Accept', 'application/json')
-       .expect(200, { _id: String(now), text: 'Wash the dishes' }, done);
+    request(app)
+      .get('/todos/'+String(now))
+      .set('Accept', 'application/json')
+      .expect(200, { _id: String(now), text: 'Wash the dishes' }, done);
   });
 
   it('PUT /todos/:id should not update that todo and should return nothing', function(done) {
-     request(app)
-       .put('/todos/'+String(now))
-       .send({ text: 'Wash the dishes and cook some pasta' })
-       .expect(405, '', done);
+    request(app)
+      .put('/todos/'+String(now))
+      .send({ text: 'Wash the dishes and cook some pasta' })
+      .expect(405, '', done);
   });
 
   it('GET /todos/:id should return the un-updated todo', function(done) {
-     request(app)
-       .get('/todos/'+String(now))
-       .expect(200, { _id: String(now), text: 'Wash the dishes' }, done);
+    request(app)
+      .get('/todos/'+String(now))
+      .expect(200, { _id: String(now), text: 'Wash the dishes' }, done);
   });
 
   it('DELETE /todos/:id should delete that todo and return nothing', function(done) {
-     request(app)
-       .delete('/todos/'+String(now))
-       .expect(204, '', done);
+    request(app)
+      .delete('/todos/'+String(now))
+      .expect(204, '', done);
   });
 
   it('DELETE /todos/:id should delete that todo and return nothing', function(done) {
-     request(app)
-       .delete('/todos/'+String(now))
-       .expect(204, '', done);
+    request(app)
+      .delete('/todos/'+String(now))
+      .expect(204, '', done);
   });
 
   it('PUT /todos/:id should not be able to recreate a todo that had previously existed', function(done) {
