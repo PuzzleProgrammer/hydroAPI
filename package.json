@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npm run jshint && npm run lintspaces && mocha",
     "jshint": "jshint `find . -name \"*.js\" ! -path \"./node_modules/*\"`",
-    "lintspaces": "lintspaces -n -t -d \"spaces\" -s 2 `find . -name \"*.js\" ! -path \"./node_modules/*\"`"
+    "lintspaces": "lintspaces -n -t -d spaces -i js-comments -s 2 `find . -name \"*.js\" ! -path \"./node_modules/*\"`"
   },
   "repository": {
     "type": "git",
