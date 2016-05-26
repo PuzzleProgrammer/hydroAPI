@@ -1,0 +1,39 @@
+{
+  "name": "hydroAPI",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run jshint && npm run lintspaces && mocha",
+    "jshint": "jshint `find . -name \"*.js\" ! -path \"./node_modules/*\"`",
+    "lintspaces": "lintspaces -n -t -d spaces -i js-comments -s 2 `find . -name \"*.js\" ! -path \"./node_modules/*\"`"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PuzzleProgrammer/hydroAPI.git"
+  },
+  "author": "Matt Andrews <matt@mattandre.ws>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matthew-andrews/offline-todo-api/issues"
+  },
+  "bin": {
+    "offline-todo-api": "./bin/offline-todo-api"
+  },
+  "homepage": "https://github.com/PuzzleProgrammer/hydroAPI.git",
+  "devDependencies": {
+    "jshint": "^2.5.3",
+    "lintspaces-cli": "0.0.4",
+    "mocha": "^1.21.4",
+    "supertest": "^0.13.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.6.3",
+    "cors": "^2.4.1",
+    "express": "^4.8.3",
+    "nedb": "^0.10.7"
+  },
+  "engines": {
+    "node": "0.10.x"
+  }
+}
